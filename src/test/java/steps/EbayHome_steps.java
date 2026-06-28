@@ -35,7 +35,7 @@ public class EbayHome_steps {
 	public void i_am_on_ebay_home_page() {
 
 		//driver.get("https://www.ebay.com/");
-		common_Actions.goToUrl("https://mail.google.com/mail/u/0/#inbox");
+		common_Actions.goToUrl("https://www.ebay.com/");
 
 	}
 	@Given("I open gmail with username and password")
