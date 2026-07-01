@@ -54,6 +54,6 @@ public class EbayHome_Actions {
 	
 	public void clickOnLinkByText(String Text) {
 		
-		driver.findElement(By.linkText(Text));
+		driver.findElement(By.linkText(Text)).click();
 	}
 }

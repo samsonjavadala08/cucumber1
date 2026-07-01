@@ -20,7 +20,8 @@ Feature: Ebay Home Page Scenarios
     When I click on Advanced Link
     Then I navigate to Advanced Search page
     Then I read excel data
-    Then I update excel sheet "<Email ID>" in row "<Row Number>" and column"<column Number>" of "<Sheet1>" in file "<src/test/resources/data.xlsx>"
+    Then I update excel sheet "<Email ID>" in ro
+    Then  <Row Number> and column<column Number> of "<Sheet1>" in file "<src/test/resources/data.xlsx>"
     
     Examples:
     |Email ID |Row Number|column Number|Sheet1|src/test/resources/data.xlsx|
@@ -49,6 +50,14 @@ Feature: Ebay Home Page Scenarios
     Given I am open Isaiah 53:5
     Then  i print Isaiah 53:5 i console
     
+    
+    
+    
+  @p10
+  Scenario: searching i phone 14
+    Given I am on Ebay Home Page
+    #Then I navigate to Advanced Search page
+    Then I read internal excel
 
 
 

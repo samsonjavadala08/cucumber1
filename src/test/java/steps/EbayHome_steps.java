@@ -2,6 +2,7 @@ package steps;
 
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -11,6 +12,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 
 import actions.Common_Actions;
 import actions.EbayHome_Actions;
+import actions.ExcelReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -127,6 +129,16 @@ public class EbayHome_steps {
 	public void i_am_open_isaiah(Integer int1, Integer int2) {
 	    System.out.println("Opened Bible Isaiah 53:5");
 	}
+	
+	
+
+	@Then("I read internal excel")
+	public void i_read_internal_excel() throws IOException {
+		ExcelReader.myExcelData();
+	}
+
+
+
 
 
 

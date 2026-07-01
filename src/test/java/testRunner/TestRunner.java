@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/json-report/cucumber.json"},
 		dryRun = false,
 		monochrome = true,
-		tags= "@p29"
+		tags= "@p10"
 		
 		) 
 		
