@@ -59,7 +59,7 @@ public class ExcelReader {
 	//	System.out.println(sheet.getRow(3).getCell(2).getStringCellValue()); 
 		int start = sheet.getFirstRowNum();
 		int end= sheet.getLastRowNum();
-		arr=new Object[end-start+1][9];
+		arr=new Object[end -start+1][9];
 		for(int i=start;i<=end;i++) {
 			arr[i][0]=sheet.getRow(i).getCell(0).getStringCellValue();
 			arr[i][1]=sheet.getRow(i).getCell(0).getStringCellValue();
