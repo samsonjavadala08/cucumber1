@@ -12,5 +12,5 @@ Feature: Ebay Home Page Scenarios
  Given I am on  Ebay Advanced Search Page 
  When I advanced search an item
   | Keyword |exclude|min|max|
-  | iphone11|refurbished|300|700| 
+  | iphone11|refurbished|300|800| 
     
