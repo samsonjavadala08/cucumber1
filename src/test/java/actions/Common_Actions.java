@@ -17,6 +17,10 @@ public class Common_Actions {
 		driver.get(url);
 	}
 	
+	public void Max () {
+		driver.manage().window().maximize();
+	}
+	
 	public String getCurrentPageUrl() {
 	return driver.getCurrentUrl();
 		

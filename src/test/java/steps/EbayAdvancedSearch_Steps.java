@@ -36,6 +36,8 @@ public class EbayAdvancedSearch_Steps {
 		//driver.get("https://www.ebay.com/sch/ebayadvsearch");
 		
 		common_Actions.goToUrl("https://www.ebay.com/sch/ebayadvsearch");
+		
+		common_Actions.Max();
 	}
 
 	@When("I click on Ebay Logo")

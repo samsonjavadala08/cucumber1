@@ -21,8 +21,8 @@ public class EbayAdvancedSearch_Elements {
 	@FindBy(xpath="//a[@id='gh-la']//*[name()='svg']") public WebElement ebaLogo;
 	@FindBy(xpath="//input[@id='_nkw']") public WebElement searchString;
 	@FindBy(xpath="//input[@id='_ex_kw']") public WebElement excludeString;
-	@FindBy(css="input[id='s0-1-17-5[2]-@range-comp[]-@range-textbox[]-textbox']") public WebElement minPrice;
-	@FindBy(css="input[id='s0-1-17-5[2]-@range-comp[]-@range-textbox[]_1-textbox']") public WebElement maxPrice;
+	@FindBy(xpath="//*[@id=\"s0-1-20-5[2]-@range-comp[]-@range-textbox[]-textbox\"]") public WebElement minPrice;
+	@FindBy(xpath="//*[@id=\"s0-1-20-5[2]-@range-comp[]-@range-textbox[]_1-textbox\"]") public WebElement maxPrice;
 	@FindBy(xpath="//div[@class='adv-form__actions']//button[@type='submit'][normalize-space()='Search']") public WebElement searchButton;
 	
 	
