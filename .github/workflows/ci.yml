@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ "main", "develop" ]
 
+    #  Add permissions here, before jobs:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
