@@ -1,7 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: testRunner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 13.276 s <<< FAILURE! - in testRunner.TestRunner
-searching i phone 14 #2(Ebay Home Page Scenarios #2)  Time elapsed: 11.89 s  <<< ERROR!
-java.lang.NullPointerException: Cannot invoke "org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue()" because the return value of "org.apache.poi.xssf.usermodel.XSSFRow.getCell(int)" is null
-
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.783 s - in testRunner.TestRunner
