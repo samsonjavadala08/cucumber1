@@ -33,11 +33,11 @@ jobs:
     - name: Run Cucumber Tests
       run: mvn test -Dcucumber.filter.tags="@smoke"
 
-    - name: Upload Cucumber Reports
+    - name: Upload Extent Report
       uses: actions/upload-artifact@v4
       with:
         name: cucumber-reports
-        path: target/cucumber-reports.html
+        path: target/ExtentReport
         
   deploy-pages:
     runs-on: ubuntu-latest
@@ -46,11 +46,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Download Cucumber Reports
+    - name: Download Extent Report
       uses: actions/download-artifact@v4
       with:
         name: cucumber-reports
-        path: public
+        path: target/ExtentReport
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
