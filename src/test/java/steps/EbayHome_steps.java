@@ -136,6 +136,13 @@ public class EbayHome_steps {
 	public void i_read_internal_excel() throws IOException {
 		ExcelReader.myExcelData();
 	}
+	@When("i open motors products")
+	public void i_open_motors_products() {
+	    // Write code here that turns the phrase above into concrete actions
+		ebayHome_Actions.openmotorsproducts();
+	}
+
+	
 
 
 

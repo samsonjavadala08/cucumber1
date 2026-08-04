@@ -67,7 +67,9 @@ Feature: Ebay Home Page Scenarios
   @p40
   Scenario: search an item in category
     Given I am on Ebay Home Page
-    When I serach for 'soap' in 'Baby' category
+   # When I serach for 'soap' in 'Baby' category
+    When i open motors products
+    
 
   # *********************Data table**************************************
   @p55

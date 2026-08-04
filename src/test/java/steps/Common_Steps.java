@@ -23,6 +23,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Common_Steps {
@@ -54,22 +55,23 @@ public class Common_Steps {
 	public void i_read_excel_data() throws IOException {
       //  DataTable dataTable = ExcelReader.getDataTable("src/test/resources/data.xlsx", "Sheet1");
 		List<Map<String, String>> excelData = ExcelReader.getDataTable("src/test/resources/data.xlsx", "Sheet1");
-
 //        List<Map<String, String>> rows = dataTable.asMaps();
 //
 //        for (Map<String, String> row : rows) {
 //            System.out.println("Username: " + row.get("Username") + ", Password: " + row.get("Password"));
 		
 		for (Map<String, String> row : excelData) {
-	        String Email = row.get("Email");
+	        String Name = row.get("Name");
 	        String expectedText = row.get("Expected Text");
-	        System.out.println(Email + expectedText);
+	        System.out.println(Name +" "+ expectedText);
+	        
 
 	     //   driver.get("https://example.com/welcome?user=" + name);
 	       // String actualText = driver.findElement(By.id("welcome-msg")).getText();
 
 	        //Assert.assertEquals(actualText, expectedText, "Text mismatch for " + name);
         }
+		
     }
 	
 	
@@ -132,6 +134,14 @@ public class Common_Steps {
 	        workbook.write(fos);
 	        workbook.close();
 	        fos.close();
+	}
+
+	
+	@When("i read below date in datatable")
+	public void i_read_below_date_in_datatable(DataTable dataTable) {
+	Map<String,String>	map=dataTable.asMap();
+	
+	System.out.println(map.get(0));
 	}
 
 	

@@ -56,4 +56,11 @@ public class EbayHome_Actions {
 		
 		driver.findElement(By.linkText(Text)).click();
 	}
+	
+public void openmotorsproducts() {
+		
+	ebayHome_Elements.motor.click();
+	}
+	
+	
 }

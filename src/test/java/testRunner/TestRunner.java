@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		dryRun = false,
 		monochrome = true,
-		tags= "@p11"
+		tags= "@pExcel"
 		
 		) 
 		

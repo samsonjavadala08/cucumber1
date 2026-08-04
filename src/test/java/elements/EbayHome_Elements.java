@@ -23,6 +23,7 @@ public class EbayHome_Elements {
 	@FindBy(xpath="//input[@id='gh-btn']") public WebElement searchButon;
 	@FindBy(css="h1.srp-controls__count-heading>span.BOLD:first-child") public WebElement numOfItems;
 	@FindBy(xpath="//select[@id='gh-cat']/option") public List<WebElement> catOptions;
+	@FindBy(xpath="//*[@id=\"vl-flyout-nav\"]/ul/li[3]/a/span") public WebElement motor;
 	
 	
 	
