@@ -30,6 +30,9 @@ public class ExcelReader {
         Row headerRow = sheet.getRow(0);
         int numRows = sheet.getPhysicalNumberOfRows();
         int numCols = headerRow.getPhysicalNumberOfCells();
+        
+        System.out.println("______physical number of rows is "+numRows);
+        System.out.println("_______physical number of colomn is "+numCols);
 
         for (int i = 1; i < numRows; i++) {
             Row row = sheet.getRow(i);
@@ -41,6 +44,7 @@ public class ExcelReader {
                 String key = headerRow.getCell(j).toString();
                 String value = (cell == null) ? "" : cell.toString();
                 dataMap.put(key, value);
+                System.out.println(dataMap.get(key));
             }
             dataList.add(dataMap);
         }

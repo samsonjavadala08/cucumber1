@@ -3,8 +3,8 @@ Feature: Pulling date from excels
 
  @pExcel
   Scenario: Reading date from excel using Map
-  
   When I read excel data
+  
   
   @pdatatable
   Scenario: Using datatable

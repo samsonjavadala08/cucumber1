@@ -17,6 +17,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
+
 import actions.ExcelReader;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.After;
@@ -42,8 +44,13 @@ public class Common_Steps {
 		if(scenario.isFailed()) {
 			//Take Screenshot
 			final byte[] shot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+			String base64Screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 			//Embed into Report
 			scenario.attach(shot, "image/png", scenario.getName());
+			// Attach to Extent Spark report
+            ExtentCucumberAdapter.addTestStepLog(
+                "Screenshot on failure: <img src='data:image/png;base64," + base64Screenshot + "'/>"
+            );
 		}
 		driver.quit();
 	}
@@ -62,7 +69,7 @@ public class Common_Steps {
 		
 		for (Map<String, String> row : excelData) {
 	        String Name = row.get("Name");
-	        String expectedText = row.get("Expected Text");
+	        String expectedText = row.get("Email");
 	        System.out.println(Name +" "+ expectedText);
 	        
 

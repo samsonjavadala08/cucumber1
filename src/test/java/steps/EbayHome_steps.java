@@ -28,7 +28,7 @@ public class EbayHome_steps {
 	Common_Actions common_Actions;
 	
 
-	public EbayHome_steps(Common_Actions common_Actions,EbayHome_Actions ebayHome_Actions) {
+	public EbayHome_steps(Common_Actions common_Actions,EbayHome_Actions ebayHome_Actions,Common_Steps common_Steps) {
 		this.common_Actions=common_Actions;
 		this.ebayHome_Actions=ebayHome_Actions;
 	}
@@ -38,6 +38,8 @@ public class EbayHome_steps {
 
 		//driver.get("https://www.ebay.com/");
 		common_Actions.goToUrl("https://www.ebay.com/");
+		common_Actions.Max();
+		
 
 	}
 	@Given("I open gmail with username and password")
