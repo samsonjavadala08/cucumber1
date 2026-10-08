@@ -146,9 +146,13 @@ public class Common_Steps {
 	
 	@When("i read below date in datatable")
 	public void i_read_below_date_in_datatable(DataTable dataTable) {
-	Map<String,String>	map=dataTable.asMap();
+	//Map<String,String>	map=dataTable.asMap();
 	
-	System.out.println(map.get(0));
+	List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+	
+	System.out.println(data);
+	
+	//System.out.println(map.get(0));
 	}
 
 	
