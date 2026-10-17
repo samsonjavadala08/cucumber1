@@ -6,54 +6,63 @@ on:
   pull_request:
     branches: [ "main", "develop" ]
 
-    #  Add permissions here, before jobs:
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
 
-    - name: Build with Maven
-      run: mvn clean install -DskipTests
+      - name: Build with Maven
+        run: mvn clean install -DskipTests
 
-    - name: Run Cucumber Tests
-      run: mvn test
+      - name: Run Cucumber Tests
+        run: mvn test
 
-    - name: Upload Extent Report
-      uses: actions/upload-artifact@v4
-      with:
-        name: cucumber-reports
-        path: target/ExtentReport
-        
-  deploy-pages:
+      - name: Upload Extent Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-reports
+          path: target/ExtentReport/cucumber-reports.html
+
+  email-report:
     runs-on: ubuntu-latest
     needs: build-and-test
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Download Extent Report
+        uses: actions/download-artifact@v4
+        with:
+          name: cucumber-reports
+          path: ./report
 
-    - name: Download Extent Report
-      uses: actions/download-artifact@v4
-      with:
-        name: cucumber-reports
-        path: target/ExtentReport
+      - name: Send Email with Report
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASS }}
+          subject: "Cucumber Test Report - ${{ github.run_number }}"
+          to: "qa-team@example.com"
+          from: "ci-pipeline@example.com"
+          body: |
+            Hello Team,
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+            The latest Cucumber test run has completed.
+            Please find the attached report.
+
+            Regards,
+            CI/CD Pipeline
+          attachments: "./report/cucumber-reports.html"
