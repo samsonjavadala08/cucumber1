@@ -418,10 +418,97 @@ abc.removeAll(qabc);
     * 
     * dsdsd
     */
+   
+   public static void allAboutIntegers() {
+       
+  int [] numbers={4, 6, 7, 5, 7, 0, 2, 3};
+        
+     // primitive array can have only 2 methods sort and toString
+  		Arrays.sort(numbers);
+        Arrays.toString(numbers);
+      //  Arrays.reverse(numbers);
+
+        System.out.println( Arrays.toString(numbers));
+        /////////////////////////////////////////////////////////////////////////
+      /// collections array can be used by below example  
+        Integer [] numbers1={4, 6, 7, 5, 7, 0, 2, 3};
+
+        List<Integer> list=Arrays.asList(numbers1);
+
+        Collections.reverse(list);
+        System.out.println(list);
+        
+        /////////////////////////////////////
+        /// 
+        /// 
+   
+        String name ="thi is the day that";
+        String [] ab=name.split(" ");
+       // Integer [] numbers1={4, 6, 7, 5, 7, 0, 2, 3};
+
+        List<String> list22=Arrays.asList(ab);
+
+        Collections.reverse(list22);
+        System.out.println(list22);
+   }
+   
+   public static void minMax() {
+	   
+	   int []  abc={3,4,6,7,8,8,7,1};
+
+       
+
+       int min= abc[0];
+       int max= abc[0];
+
+
+       for(int num:abc){
+
+           if (num<min) min= num;
+           if( num>max) max= num;
+       }
+       
+       System.out.println(min);
+       System.out.println(max);
+       
+       
+       
   
   
-  
-  
+   }
+   public static void minMax2() {
+	   
+	   int[] arr = {4, 6, 8, 9, 5, 3};
+
+       int first = Integer.MIN_VALUE;
+       int second = Integer.MIN_VALUE;
+       int third = Integer.MIN_VALUE;
+       int fourth = Integer.MIN_VALUE;
+
+       for (int num : arr) {
+           if (num > first) //46
+			{
+               fourth = third;///4
+               third = second;  //6
+               second = first;  //8
+               first = num;    //9
+           } else if (num > second && num < first) {
+               fourth = third;
+               third = second;
+               second = num;
+           } else if (num > third && num < second) {
+               fourth = third;
+               third = num;
+           } else if (num > fourth && num < third) {
+               fourth = num;
+           }
+       }
+
+       System.out.println("3rd highest: " + third);
+       System.out.println("4th highest: " + fourth);
+	   
+   
+   }
   
 	  
 	  
