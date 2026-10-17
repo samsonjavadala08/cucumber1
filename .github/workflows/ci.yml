@@ -31,7 +31,7 @@ jobs:
       run: mvn clean install -DskipTests
 
     - name: Run Cucumber Tests
-      run: mvn test -Dcucumber.filter.tags="@smoke"
+      run: mvn test
 
     - name: Upload Extent Report
       uses: actions/upload-artifact@v4
