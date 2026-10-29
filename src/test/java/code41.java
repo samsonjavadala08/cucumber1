@@ -509,7 +509,23 @@ abc.removeAll(qabc);
 	   
    
    }
-  
+   public static void mapexample() {
+       System.out.println("Try clicking the Run button.");
+
+       Map <String,Integer> mp = new HashMap<>();
+       mp.put("mumbai",899);
+       mp.put("delhi",900);
+        mp.put("jaipur",70);
+       mp.put("virar",5);
+
+       System.out.println(mp);
+
+
+       for(Map.Entry<String,Integer> entry:mp.entrySet()){
+
+       System.out.println(entry.getKey() + entry.getValue());}
+       
+   }
 	  
 	  
 	  
